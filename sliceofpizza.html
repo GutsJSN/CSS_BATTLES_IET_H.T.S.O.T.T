@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Slice with Curve</title>
+    <style>
+        body {
+            background-color: #00a5d3;
+        }
+        .box {
+            width: 359px;
+            height: 537px;
+            background-color: #015581;
+        }
+        .pizza-slice {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 200px solid #f4a460; /* Crust color */
+            position: relative;
+        }
+        .pizza-slice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100px;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 180px solid #ff6347; /* Sauce color */
+        }
+        .pizza-slice::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -100px;
+            width: 200px;
+            height: 40px;
+            background-color: #f4a460; /* Crust color */
+            border-radius: 0 0 50% 50%;
+        }
+        .pepperoni {
+            width: 20px;
+            height: 20px;
+            background-color: #b22222;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .pepperoni:nth-child(1) {
+            top: 50px;
+            left: 80px;
+        }
+        .pepperoni:nth-child(2) {
+            top: 100px;
+            left: 120px;
+        }
+        .pepperoni:nth-child(3) {
+            top: 150px;
+            left: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="pizza-slice">
+            <div class="pepperoni"></div>
+            <div class="pepperoni"></div>
+            <div class="pepperoni"></div>
+        </div>
+    </div>
+</body>
+</html>
